@@ -34,7 +34,7 @@
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
 								<li><a class="scrolly" href="#footer">Trailers</a></li>
-											<li><a class="scrolly" href="#one">Trailers</a></li>
+								<li><a class="scrolly" href="#one">Screenshots</a></li>
 								<li><a class="scrolly" href="#one">Download</a></li>
 								<li><a class="scrolly" href="#one">Contact</a></li>
 							</ul>
@@ -169,6 +169,21 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+						<script>
+				$(document).ready(function(){
+  				  $("a").on('click', function(event) {
+    				    if (this.hash !== "") {
+      				      event.preventDefault();
+      				      var hash = this.hash;
+      				      $('html, body').animate({
+        			        scrollTop: $(hash).offset().top
+       				      }, 800, function(){
+        			        window.location.hash = hash;
+       				      });
+    				    }
+  				  });
+			       });
+		       </script>
 
 	</body>
 </html>
